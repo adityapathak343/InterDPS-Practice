@@ -1,13 +1,18 @@
 #defining grid and other funcrtions
 from os import system, name
-a = [1,2,3,4,5,6,7,8,9]
+a = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+a1 = [1,2,3,4,5,6,7,8,9]
 def prgrd():
-    print("     |     |     ")
-    print("_",a[6],"_|_",a[7],"_|_",a[8],"_")
-    print("     |     |     ")
-    print("_",a[3],"_|_",a[4],"_|_",a[5],"_")  
-    print("     |     |     ")
-    print(" ",a[0]," | ",a[1], " | ",a[2]," ")
+    print(" _________________")
+    print("|     |     |     |")
+    print("| ",a[6]," | ",a[7]," | ",a[8]," |")
+    print("|_____|_____|_____|")
+    print("|     |     |     |")
+    print("| ",a[3]," | ",a[4]," | ",a[5]," |")
+    print("|_____|_____|_____|")
+    print("|     |     |     |")
+    print("| ",a[0]," | ",a[1]," | ",a[2]," |")
+    print("|_____|_____|_____|")
 def clear():
     if name == 'nt':
         _ = system('cls')
@@ -28,13 +33,19 @@ ctr = 1
 #maincode:
 while(ctr < 9):
     x = int(input("Where would you like to place X? "))
-    if x in a:
+    if x in a1:
+        if a[x-1] == 'O':
+            print("Invalid Input. Exiting!")
+            raise SystemExit
         a[x-1] = 'X'
     clear() 
     prgrd()
     wfx()
     o = int(input("Where would you like to place O? "))
-    if o in a:
+    if o in a1:
+        if a[o-1] == 'X':
+            print("Invalid Input. Exiting!")
+            raise SystemExit
         a[o-1] = 'O'
     clear() 
     prgrd()
