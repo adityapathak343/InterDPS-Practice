@@ -31,6 +31,13 @@ prgrd()
 ctr = 1
 
 #maincode:
+a = [1,2,3,4,5,6,7,8,9]
+prgrd()
+a = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+print("Press any key to play!..")
+input()
+clear()
+prgrd()
 while(ctr < 9):
     x = int(input("Where would you like to place X? "))
     if x in a1:
