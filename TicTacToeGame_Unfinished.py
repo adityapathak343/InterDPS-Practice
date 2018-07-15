@@ -38,10 +38,11 @@ print("Press any key to play!..")
 input()
 clear()
 prgrd()
+ctr=1
 while(ctr < 9):
     x = int(input("Where would you like to place X? "))
     if x in a1:
-        if a[x-1] == 'O':
+        if a[x-1] != ' ':
             print("Invalid Input. Exiting!")
             raise SystemExit
         a[x-1] = 'X'
@@ -50,7 +51,7 @@ while(ctr < 9):
     wfx()
     o = int(input("Where would you like to place O? "))
     if o in a1:
-        if a[o-1] == 'X':
+        if a[o-1] != ' ':
             print("Invalid Input. Exiting!")
             raise SystemExit
         a[o-1] = 'O'
